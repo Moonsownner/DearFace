@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		181129BE1C7B365400F50FED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181129BD1C7B365400F50FED /* AppDelegate.swift */; };
-		181129C51C7B365400F50FED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181129C41C7B365400F50FED /* Assets.xcassets */; };
+		181129C51C7B365400F50FED /* App.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181129C41C7B365400F50FED /* App.xcassets */; };
 		181129C81C7B365400F50FED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181129C61C7B365400F50FED /* LaunchScreen.storyboard */; };
-		181129D81C7B38FC00F50FED /* MakeFaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181129D71C7B38FC00F50FED /* MakeFaceViewController.swift */; };
-		181129DC1C7B3ABD00F50FED /* MakeFaceAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181129DB1C7B3ABD00F50FED /* MakeFaceAssets.xcassets */; };
+		181129D81C7B38FC00F50FED /* MakeFaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181129D71C7B38FC00F50FED /* MakeFaceController.swift */; };
+		E5DA3FED1D768C560071B22E /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA3FEC1D768C560071B22E /* Const.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		181129BA1C7B365400F50FED /* DearFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DearFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		181129BD1C7B365400F50FED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		181129C41C7B365400F50FED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		181129C41C7B365400F50FED /* App.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = App.xcassets; sourceTree = "<group>"; };
 		181129C71C7B365400F50FED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		181129C91C7B365400F50FED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		181129D71C7B38FC00F50FED /* MakeFaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeFaceViewController.swift; sourceTree = "<group>"; };
-		181129DB1C7B3ABD00F50FED /* MakeFaceAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MakeFaceAssets.xcassets; sourceTree = "<group>"; };
+		181129D71C7B38FC00F50FED /* MakeFaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeFaceController.swift; sourceTree = "<group>"; };
+		E5DA3FEC1D768C560071B22E /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +56,8 @@
 			children = (
 				E5DA3FE31D76882D0071B22E /* AppRoot */,
 				181129CF1C7B37A100F50FED /* AppMain */,
+				E5DA3FE71D768A8C0071B22E /* Public */,
 				181129D01C7B37A600F50FED /* Vender(第三方) */,
-				181129C41C7B365400F50FED /* Assets.xcassets */,
-				181129C61C7B365400F50FED /* LaunchScreen.storyboard */,
-				181129C91C7B365400F50FED /* Info.plist */,
 			);
 			path = DearFace;
 			sourceTree = "<group>";
@@ -90,7 +88,7 @@
 		181129D41C7B385900F50FED /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				181129D71C7B38FC00F50FED /* MakeFaceViewController.swift */,
+				181129D71C7B38FC00F50FED /* MakeFaceController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -123,7 +121,6 @@
 		181129DA1C7B3AA400F50FED /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				181129DB1C7B3ABD00F50FED /* MakeFaceAssets.xcassets */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -131,17 +128,76 @@
 		E5DA3FE31D76882D0071B22E /* AppRoot */ = {
 			isa = PBXGroup;
 			children = (
+				E5DA3FE41D76883B0071B22E /* Resource */,
 				181129D31C7B37D800F50FED /* AppDelegate */,
-				E5DA3FE41D76883B0071B22E /* New Group */,
+				E5DA3FE51D7689DD0071B22E /* Root */,
+				E5DA3FE61D7689E60071B22E /* Intro&Launch */,
 			);
 			name = AppRoot;
 			sourceTree = "<group>";
 		};
-		E5DA3FE41D76883B0071B22E /* New Group */ = {
+		E5DA3FE41D76883B0071B22E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				181129C41C7B365400F50FED /* App.xcassets */,
+				181129C91C7B365400F50FED /* Info.plist */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		E5DA3FE51D7689DD0071B22E /* Root */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "New Group";
+			name = Root;
+			sourceTree = "<group>";
+		};
+		E5DA3FE61D7689E60071B22E /* Intro&Launch */ = {
+			isa = PBXGroup;
+			children = (
+				181129C61C7B365400F50FED /* LaunchScreen.storyboard */,
+			);
+			name = "Intro&Launch";
+			sourceTree = "<group>";
+		};
+		E5DA3FE71D768A8C0071B22E /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				E5DA3FEB1D768C3D0071B22E /* Basic */,
+				E5DA3FE81D768A9B0071B22E /* UIBasic */,
+				E5DA3FEA1D768BC40071B22E /* UIComponet */,
+				E5DA3FE91D768BBA0071B22E /* Expand */,
+			);
+			name = Public;
+			sourceTree = "<group>";
+		};
+		E5DA3FE81D768A9B0071B22E /* UIBasic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UIBasic;
+			sourceTree = "<group>";
+		};
+		E5DA3FE91D768BBA0071B22E /* Expand */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Expand;
+			sourceTree = "<group>";
+		};
+		E5DA3FEA1D768BC40071B22E /* UIComponet */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UIComponet;
+			sourceTree = "<group>";
+		};
+		E5DA3FEB1D768C3D0071B22E /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				E5DA3FEC1D768C560071B22E /* Const.swift */,
+			);
+			name = Basic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,8 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				181129C81C7B365400F50FED /* LaunchScreen.storyboard in Resources */,
-				181129DC1C7B3ABD00F50FED /* MakeFaceAssets.xcassets in Resources */,
-				181129C51C7B365400F50FED /* Assets.xcassets in Resources */,
+				181129C51C7B365400F50FED /* App.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +271,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				181129BE1C7B365400F50FED /* AppDelegate.swift in Sources */,
-				181129D81C7B38FC00F50FED /* MakeFaceViewController.swift in Sources */,
+				181129D81C7B38FC00F50FED /* MakeFaceController.swift in Sources */,
+				E5DA3FED1D768C560071B22E /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,11 +375,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DearFace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.joker.DearFace;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.jhd.DearFace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -331,11 +390,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DearFace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.joker.DearFace;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.jhd.DearFace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
