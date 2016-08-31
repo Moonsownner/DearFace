@@ -17,3 +17,8 @@ var screenWidth: CGFloat{
 var screenHeight: CGFloat{
     return UIScreen.mainScreen().bounds.height
 }
+
+///屏幕Size
+var screenSize: CGSize{
+    return UIScreen.mainScreen().bounds.size
+}
