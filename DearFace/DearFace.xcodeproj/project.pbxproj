@@ -13,6 +13,15 @@
 		181129D81C7B38FC00F50FED /* MakeFaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181129D71C7B38FC00F50FED /* MakeFaceController.swift */; };
 		E09D456634D5904FCC75E8D7 /* Pods_DearFace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74DD3A3143145BF26DA726A6 /* Pods_DearFace.framework */; };
 		E5DA3FED1D768C560071B22E /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA3FEC1D768C560071B22E /* Const.swift */; };
+		E5DA3FF41D76A2310071B22E /* MakeFaceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA3FF31D76A2310071B22E /* MakeFaceLayout.swift */; };
+		E5DA3FF61D76A3500071B22E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DA3FF51D76A3500071B22E /* Photos.framework */; };
+		E5DA3FFA1D76A6A00071B22E /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA3FF91D76A6A00071B22E /* ImagePickerController.swift */; };
+		E5DA3FFC1D76AA5D0071B22E /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA3FFB1D76AA5D0071B22E /* AppDelegateExtension.swift */; };
+		E5DA3FFF1D76AC490071B22E /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA3FFE1D76AC490071B22E /* UIImage.swift */; };
+		E5E42D3E1D780930006C5954 /* MakeFaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E42D3D1D780930006C5954 /* MakeFaceModel.swift */; };
+		E5E42D401D780CA7006C5954 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E42D3F1D780CA7006C5954 /* CGFloat.swift */; };
+		E5E42D421D783249006C5954 /* MakeFaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E42D411D783249006C5954 /* MakeFaceCell.swift */; };
+		E5E42D441D783577006C5954 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E42D431D783577006C5954 /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +35,15 @@
 		7A82E2B8B90FE2BCE28C4806 /* Pods-DearFace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DearFace.release.xcconfig"; path = "Pods/Target Support Files/Pods-DearFace/Pods-DearFace.release.xcconfig"; sourceTree = "<group>"; };
 		8C482BD48F6D349F116D0CC6 /* Pods-DearFace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DearFace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DearFace/Pods-DearFace.debug.xcconfig"; sourceTree = "<group>"; };
 		E5DA3FEC1D768C560071B22E /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		E5DA3FF31D76A2310071B22E /* MakeFaceLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeFaceLayout.swift; sourceTree = "<group>"; };
+		E5DA3FF51D76A3500071B22E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		E5DA3FF91D76A6A00071B22E /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
+		E5DA3FFB1D76AA5D0071B22E /* AppDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
+		E5DA3FFE1D76AC490071B22E /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		E5E42D3D1D780930006C5954 /* MakeFaceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeFaceModel.swift; sourceTree = "<group>"; };
+		E5E42D3F1D780CA7006C5954 /* CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		E5E42D411D783249006C5954 /* MakeFaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeFaceCell.swift; sourceTree = "<group>"; };
+		E5E42D431D783577006C5954 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5DA3FF61D76A3500071B22E /* Photos.framework in Frameworks */,
 				E09D456634D5904FCC75E8D7 /* Pods_DearFace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +91,7 @@
 		181129CF1C7B37A100F50FED /* AppMain */ = {
 			isa = PBXGroup;
 			children = (
+				E5DA3FF71D76A6890071B22E /* Image */,
 				181129D91C7B390000F50FED /* MakeFace */,
 			);
 			name = AppMain;
@@ -88,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				181129BD1C7B365400F50FED /* AppDelegate.swift */,
+				E5DA3FFB1D76AA5D0071B22E /* AppDelegateExtension.swift */,
 			);
 			name = AppDelegate;
 			sourceTree = "<group>";
@@ -103,6 +124,7 @@
 		181129D51C7B385B00F50FED /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E5E42D411D783249006C5954 /* MakeFaceCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -110,6 +132,7 @@
 		181129D61C7B385E00F50FED /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E5E42D3D1D780930006C5954 /* MakeFaceModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -118,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				181129DA1C7B3AA400F50FED /* Resource */,
+				E5DA3FF21D76A21D0071B22E /* Layout */,
 				181129D61C7B385E00F50FED /* Model */,
 				181129D51C7B385B00F50FED /* View */,
 				181129D41C7B385900F50FED /* Controller */,
@@ -135,6 +159,7 @@
 		74DF555D7D200DC3434996E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E5DA3FF51D76A3500071B22E /* Photos.framework */,
 				74DD3A3143145BF26DA726A6 /* Pods_DearFace.framework */,
 			);
 			name = Frameworks;
@@ -187,7 +212,7 @@
 		E5DA3FE71D768A8C0071B22E /* Public(公共) */ = {
 			isa = PBXGroup;
 			children = (
-				E5DA3FEB1D768C3D0071B22E /* Basic */,
+				E5DA3FEB1D768C3D0071B22E /* Common */,
 				E5DA3FE81D768A9B0071B22E /* UIBasic */,
 				E5DA3FEA1D768BC40071B22E /* UIComponet */,
 				E5DA3FE91D768BBA0071B22E /* Expand */,
@@ -205,6 +230,8 @@
 		E5DA3FE91D768BBA0071B22E /* Expand */ = {
 			isa = PBXGroup;
 			children = (
+				E5DA3FFE1D76AC490071B22E /* UIImage.swift */,
+				E5E42D3F1D780CA7006C5954 /* CGFloat.swift */,
 			);
 			name = Expand;
 			sourceTree = "<group>";
@@ -216,12 +243,37 @@
 			name = UIComponet;
 			sourceTree = "<group>";
 		};
-		E5DA3FEB1D768C3D0071B22E /* Basic */ = {
+		E5DA3FEB1D768C3D0071B22E /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				E5DA3FEC1D768C560071B22E /* Const.swift */,
+				E5E42D431D783577006C5954 /* Observable.swift */,
 			);
-			name = Basic;
+			name = Common;
+			sourceTree = "<group>";
+		};
+		E5DA3FF21D76A21D0071B22E /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				E5DA3FF31D76A2310071B22E /* MakeFaceLayout.swift */,
+			);
+			name = Layout;
+			sourceTree = "<group>";
+		};
+		E5DA3FF71D76A6890071B22E /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				E5DA3FF81D76A6900071B22E /* Controller */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		E5DA3FF81D76A6900071B22E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E5DA3FF91D76A6A00071B22E /* ImagePickerController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,9 +397,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5E42D441D783577006C5954 /* Observable.swift in Sources */,
+				E5E42D401D780CA7006C5954 /* CGFloat.swift in Sources */,
 				181129BE1C7B365400F50FED /* AppDelegate.swift in Sources */,
 				181129D81C7B38FC00F50FED /* MakeFaceController.swift in Sources */,
+				E5DA3FFA1D76A6A00071B22E /* ImagePickerController.swift in Sources */,
+				E5E42D421D783249006C5954 /* MakeFaceCell.swift in Sources */,
+				E5DA3FF41D76A2310071B22E /* MakeFaceLayout.swift in Sources */,
+				E5E42D3E1D780930006C5954 /* MakeFaceModel.swift in Sources */,
+				E5DA3FFC1D76AA5D0071B22E /* AppDelegateExtension.swift in Sources */,
 				E5DA3FED1D768C560071B22E /* Const.swift in Sources */,
+				E5DA3FFF1D76AC490071B22E /* UIImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

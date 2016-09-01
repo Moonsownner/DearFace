@@ -8,6 +8,16 @@
 
 import UIKit
 
+///状态条高度
+var statusBarHeight: CGFloat{
+    return 20.0
+}
+
+///导航条高度
+var naviBarHeight: CGFloat{
+    return 44.0
+}
+
 ///屏幕宽度
 var screenWidth: CGFloat{
     return UIScreen.mainScreen().bounds.width

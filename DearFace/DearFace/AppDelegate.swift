@@ -15,8 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        initSystem()
+        
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window!.rootViewController = MakeFaceController()
+        window!.rootViewController = ImagePickerController()
         window!.makeKeyAndVisible()
         
         return true
