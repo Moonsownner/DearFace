@@ -18,20 +18,19 @@ class ImagePickerController: UIImagePickerController {
         
     }
     
-    func makeUI(){
-        
-    }
-    
 }
 
 extension ImagePickerController: UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        print(info[UIImagePickerControllerOriginalImage])
+        ConfigVC.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        mainAct {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
     
 }

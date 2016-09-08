@@ -16,13 +16,19 @@ class MakeFaceController: UIViewController {
     let model: MakeFaceModel
     var backImg: UIImage?
     
+    lazy var layout: UICollectionViewFlowLayout = {
+        let lo = UICollectionViewFlowLayout()
+        lo.minimumLineSpacing = CGFloat.min
+        lo.minimumInteritemSpacing = CGFloat.min
+        lo.sectionInset = UIEdgeInsetsZero
+        return lo
+    }()
+    
     lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = CGFloat.min
-        let width = (screenWidth/4).rounded
-        layout.itemSize = CGSize(width: width, height: width)
-        layout.itemSize = CGSize.zero
-        let collection = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
+        let collection = UICollectionView(frame: CGRectZero, collectionViewLayout: self.layout)
+        collection.registerClass(MakeFaceCell.self, forCellWithReuseIdentifier: self.cellId)
+        collection.dataSource = self
+        collection.delegate = self
         return collection
     }()
     
@@ -30,6 +36,8 @@ class MakeFaceController: UIViewController {
         self.model = model
         self.backImg = image
         super.init(nibName: nil, bundle: nil)
+        let width = (ScreenWidth/CGFloat(self.model.rowNum.value)).rounded
+        self.layout.itemSize = CGSize(width: width, height: width)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -38,26 +46,38 @@ class MakeFaceController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+        makeUI()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     func makeUI(){
         view.backgroundColor = UIColor.whiteColor()
         
-        collectionView.registerClass(MakeFaceCell.self, forCellWithReuseIdentifier: cellId)
-        
-        
-        
+        if let img = backImg{
+            makeUI(img)
+        }
+        else{
+            
+        }
         
     }
     
     func makeUI(image: UIImage){
         let size = image.size
         collectionView.contentSize = size
-        
-        
+        collectionView.backgroundView = UIImageView(image: image)
+        view.addSubview(collectionView)
+        collectionView.snp_makeConstraints { (make) in
+            make.edges.equalTo(view)
+        }
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
 }
@@ -65,7 +85,7 @@ class MakeFaceController: UIViewController {
 extension MakeFaceController: UICollectionViewDataSource{
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return model.rowNum.value
+        return model.sectionNum.value
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -76,5 +96,9 @@ extension MakeFaceController: UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath) as! MakeFaceCell
         return cell
     }
+    
+}
+
+extension MakeFaceController: UICollectionViewDelegate{
     
 }

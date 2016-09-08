@@ -8,6 +8,7 @@
 
 import Foundation
 
+///图片合成控制器模型
 struct MakeFaceModel {
     
     ///行数

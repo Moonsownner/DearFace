@@ -8,27 +8,25 @@
 
 import UIKit
 
-///状态条高度
-var statusBarHeight: CGFloat{
-    return 20.0
-}
+///配置控制器
+let ConfigVC = ConfigController()
 
-///导航条高度
-var naviBarHeight: CGFloat{
-    return 44.0
+///1px分割线
+var OneWidth: CGFloat{
+    return 1/UIScreen.mainScreen().scale
 }
 
 ///屏幕宽度
-var screenWidth: CGFloat{
+var ScreenWidth: CGFloat{
     return UIScreen.mainScreen().bounds.width
 }
 
 ///屏幕高度
-var screenHeight: CGFloat{
+var ScreenHeight: CGFloat{
     return UIScreen.mainScreen().bounds.height
 }
 
 ///屏幕Size
-var screenSize: CGSize{
+var ScreenSize: CGSize{
     return UIScreen.mainScreen().bounds.size
 }

@@ -6,6 +6,7 @@
 //  Copyright © 2016 Joker. All rights reserved.
 //
 
+import UIKit
 import CoreGraphics
 
 extension CGFloat{

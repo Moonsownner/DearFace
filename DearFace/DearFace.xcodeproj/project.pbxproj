@@ -22,6 +22,8 @@
 		E5E42D401D780CA7006C5954 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E42D3F1D780CA7006C5954 /* CGFloat.swift */; };
 		E5E42D421D783249006C5954 /* MakeFaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E42D411D783249006C5954 /* MakeFaceCell.swift */; };
 		E5E42D441D783577006C5954 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E42D431D783577006C5954 /* Observable.swift */; };
+		E5E42D481D7845FB006C5954 /* ConfigController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E42D471D7845FB006C5954 /* ConfigController.swift */; };
+		E5E42D4B1D78471C006C5954 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E42D4A1D78471C006C5954 /* GCD.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		E5E42D3F1D780CA7006C5954 /* CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		E5E42D411D783249006C5954 /* MakeFaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeFaceCell.swift; sourceTree = "<group>"; };
 		E5E42D431D783577006C5954 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		E5E42D471D7845FB006C5954 /* ConfigController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigController.swift; sourceTree = "<group>"; };
+		E5E42D4A1D78471C006C5954 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 		181129CF1C7B37A100F50FED /* AppMain */ = {
 			isa = PBXGroup;
 			children = (
+				E5E42D451D7845E3006C5954 /* Config */,
 				E5DA3FF71D76A6890071B22E /* Image */,
 				181129D91C7B390000F50FED /* MakeFace */,
 			);
@@ -248,6 +253,7 @@
 			children = (
 				E5DA3FEC1D768C560071B22E /* Const.swift */,
 				E5E42D431D783577006C5954 /* Observable.swift */,
+				E5E42D4A1D78471C006C5954 /* GCD.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -274,6 +280,30 @@
 				E5DA3FF91D76A6A00071B22E /* ImagePickerController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		E5E42D451D7845E3006C5954 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				E5E42D491D78460D006C5954 /* View */,
+				E5E42D461D7845EE006C5954 /* Controller */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
+		E5E42D461D7845EE006C5954 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E5E42D471D7845FB006C5954 /* ConfigController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E5E42D491D78460D006C5954 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,12 +428,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5E42D441D783577006C5954 /* Observable.swift in Sources */,
+				E5E42D4B1D78471C006C5954 /* GCD.swift in Sources */,
 				E5E42D401D780CA7006C5954 /* CGFloat.swift in Sources */,
 				181129BE1C7B365400F50FED /* AppDelegate.swift in Sources */,
 				181129D81C7B38FC00F50FED /* MakeFaceController.swift in Sources */,
 				E5DA3FFA1D76A6A00071B22E /* ImagePickerController.swift in Sources */,
 				E5E42D421D783249006C5954 /* MakeFaceCell.swift in Sources */,
 				E5DA3FF41D76A2310071B22E /* MakeFaceLayout.swift in Sources */,
+				E5E42D481D7845FB006C5954 /* ConfigController.swift in Sources */,
 				E5E42D3E1D780930006C5954 /* MakeFaceModel.swift in Sources */,
 				E5DA3FFC1D76AA5D0071B22E /* AppDelegateExtension.swift in Sources */,
 				E5DA3FED1D768C560071B22E /* Const.swift in Sources */,

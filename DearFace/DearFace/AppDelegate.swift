@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         initSystem()
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window!.rootViewController = ImagePickerController()
+        window!.rootViewController = UINavigationController(rootViewController: ConfigVC)
         window!.makeKeyAndVisible()
         
         return true
