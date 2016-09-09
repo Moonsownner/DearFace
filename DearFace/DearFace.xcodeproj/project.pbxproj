@@ -12,8 +12,8 @@
 		181129C81C7B365400F50FED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181129C61C7B365400F50FED /* LaunchScreen.storyboard */; };
 		181129D81C7B38FC00F50FED /* MakeFaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181129D71C7B38FC00F50FED /* MakeFaceController.swift */; };
 		E09D456634D5904FCC75E8D7 /* Pods_DearFace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74DD3A3143145BF26DA726A6 /* Pods_DearFace.framework */; };
+		E5180C951D81BD41009AB393 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5180C941D81BD41009AB393 /* CGSize.swift */; };
 		E5DA3FED1D768C560071B22E /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA3FEC1D768C560071B22E /* Const.swift */; };
-		E5DA3FF41D76A2310071B22E /* MakeFaceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA3FF31D76A2310071B22E /* MakeFaceLayout.swift */; };
 		E5DA3FF61D76A3500071B22E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DA3FF51D76A3500071B22E /* Photos.framework */; };
 		E5DA3FFA1D76A6A00071B22E /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA3FF91D76A6A00071B22E /* ImagePickerController.swift */; };
 		E5DA3FFC1D76AA5D0071B22E /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA3FFB1D76AA5D0071B22E /* AppDelegateExtension.swift */; };
@@ -36,8 +36,8 @@
 		74DD3A3143145BF26DA726A6 /* Pods_DearFace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DearFace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A82E2B8B90FE2BCE28C4806 /* Pods-DearFace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DearFace.release.xcconfig"; path = "Pods/Target Support Files/Pods-DearFace/Pods-DearFace.release.xcconfig"; sourceTree = "<group>"; };
 		8C482BD48F6D349F116D0CC6 /* Pods-DearFace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DearFace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DearFace/Pods-DearFace.debug.xcconfig"; sourceTree = "<group>"; };
+		E5180C941D81BD41009AB393 /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
 		E5DA3FEC1D768C560071B22E /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
-		E5DA3FF31D76A2310071B22E /* MakeFaceLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeFaceLayout.swift; sourceTree = "<group>"; };
 		E5DA3FF51D76A3500071B22E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		E5DA3FF91D76A6A00071B22E /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		E5DA3FFB1D76AA5D0071B22E /* AppDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
@@ -237,6 +237,7 @@
 			children = (
 				E5DA3FFE1D76AC490071B22E /* UIImage.swift */,
 				E5E42D3F1D780CA7006C5954 /* CGFloat.swift */,
+				E5180C941D81BD41009AB393 /* CGSize.swift */,
 			);
 			name = Expand;
 			sourceTree = "<group>";
@@ -261,7 +262,6 @@
 		E5DA3FF21D76A21D0071B22E /* Layout */ = {
 			isa = PBXGroup;
 			children = (
-				E5DA3FF31D76A2310071B22E /* MakeFaceLayout.swift */,
 			);
 			name = Layout;
 			sourceTree = "<group>";
@@ -428,13 +428,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5E42D441D783577006C5954 /* Observable.swift in Sources */,
+				E5180C951D81BD41009AB393 /* CGSize.swift in Sources */,
 				E5E42D4B1D78471C006C5954 /* GCD.swift in Sources */,
 				E5E42D401D780CA7006C5954 /* CGFloat.swift in Sources */,
 				181129BE1C7B365400F50FED /* AppDelegate.swift in Sources */,
 				181129D81C7B38FC00F50FED /* MakeFaceController.swift in Sources */,
 				E5DA3FFA1D76A6A00071B22E /* ImagePickerController.swift in Sources */,
 				E5E42D421D783249006C5954 /* MakeFaceCell.swift in Sources */,
-				E5DA3FF41D76A2310071B22E /* MakeFaceLayout.swift in Sources */,
 				E5E42D481D7845FB006C5954 /* ConfigController.swift in Sources */,
 				E5E42D3E1D780930006C5954 /* MakeFaceModel.swift in Sources */,
 				E5DA3FFC1D76AA5D0071B22E /* AppDelegateExtension.swift in Sources */,

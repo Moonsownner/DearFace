@@ -36,8 +36,6 @@ class MakeFaceController: UIViewController {
         self.model = model
         self.backImg = image
         super.init(nibName: nil, bundle: nil)
-        let width = (ScreenWidth/CGFloat(self.model.rowNum.value)).rounded
-        self.layout.itemSize = CGSize(width: width, height: width)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -63,13 +61,22 @@ class MakeFaceController: UIViewController {
         else{
             
         }
-        
     }
     
     func makeUI(image: UIImage){
-        let size = image.size
+        
+        let size = image.size.adjustedSize(ScreenSize)
+        
+        let width = (size.width/CGFloat(self.model.rowNum.value))
+        let height = (size.height/CGFloat(self.model.sectionNum.value))
+        self.layout.itemSize = CGSize(width: width, height: height)
+        
         collectionView.contentSize = size
-        collectionView.backgroundView = UIImageView(image: image)
+        let backView = UIView()
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(origin: CGPointZero, size: size)
+        backView.addSubview(imageView)
+        collectionView.backgroundView = backView
         view.addSubview(collectionView)
         collectionView.snp_makeConstraints { (make) in
             make.edges.equalTo(view)

@@ -54,7 +54,7 @@ class ConfigController: UIViewController {
     
     ///进入makeface
     func goNext(){
-        let model = MakeFaceModel(sectionNum: Observable<Int>(value: 20), rowNum: Observable<Int>(value: 20))
+        let model = MakeFaceModel(sectionNum: Observable<Int>(value: 5), rowNum: Observable<Int>(value: 5))
         let vc = MakeFaceController(model: model, image: image)
         navigationController?.pushViewController(vc, animated: true)
     }
