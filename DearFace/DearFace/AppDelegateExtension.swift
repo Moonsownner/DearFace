@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 extension AppDelegate{
     
@@ -16,9 +17,7 @@ extension AppDelegate{
     
     ///设置界面风格
     func setTheme(){
-//        UINavigationBar.appearance().setBackgroundImage(
-//            UIImage.fromColor(UIColor.whiteColor(), size: CGSize(width: screenWidth, height: 64)), forBarMetrics: .Default)
-//        UINavigationBar.appearance()
+        
     }
     
 }

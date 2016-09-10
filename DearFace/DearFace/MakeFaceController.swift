@@ -32,6 +32,8 @@ class MakeFaceController: UIViewController {
         return collection
     }()
     
+    lazy var imageSelectController = ImageSelectController()
+    
     init(model: MakeFaceModel, image: UIImage?){
         self.model = model
         self.backImg = image
@@ -61,6 +63,12 @@ class MakeFaceController: UIViewController {
         else{
             
         }
+        
+        addChildViewController(imageSelectController)
+        imageSelectController.view.frame = CGRectMake(0, ScreenHeight - ImageSelectItem.rowHeight, ScreenWidth, ImageSelectItem.rowHeight)
+        view.addSubview(imageSelectController.view)
+        imageSelectController.didMoveToParentViewController(self)
+        
     }
     
     func makeUI(image: UIImage){
@@ -79,7 +87,10 @@ class MakeFaceController: UIViewController {
         collectionView.backgroundView = backView
         view.addSubview(collectionView)
         collectionView.snp_makeConstraints { (make) in
-            make.edges.equalTo(view)
+            make.top.equalTo(view)
+            make.left.equalTo(view)
+            make.right.equalTo(view)
+            make.bottom.equalTo(view).inset(ImageSelectItem.rowHeight)
         }
     }
     
