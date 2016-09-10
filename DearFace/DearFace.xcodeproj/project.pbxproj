@@ -17,6 +17,7 @@
 		E555B4B01D82E7FE00380C36 /* ImageSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555B4AF1D82E7FE00380C36 /* ImageSelectCell.swift */; };
 		E555B4B41D82EFEA00380C36 /* PHFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555B4B31D82EFEA00380C36 /* PHFetchResult.swift */; };
 		E555B4B61D83DE0B00380C36 /* MakeFaceUIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555B4B51D83DE0B00380C36 /* MakeFaceUIConfig.swift */; };
+		E555B4BB1D83EF9700380C36 /* MakeFaceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555B4BA1D83EF9700380C36 /* MakeFaceLayout.swift */; };
 		E5DA3FED1D768C560071B22E /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA3FEC1D768C560071B22E /* Const.swift */; };
 		E5DA3FF61D76A3500071B22E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DA3FF51D76A3500071B22E /* Photos.framework */; };
 		E5DA3FFA1D76A6A00071B22E /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA3FF91D76A6A00071B22E /* ImagePickerController.swift */; };
@@ -45,6 +46,7 @@
 		E555B4AF1D82E7FE00380C36 /* ImageSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelectCell.swift; sourceTree = "<group>"; };
 		E555B4B31D82EFEA00380C36 /* PHFetchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHFetchResult.swift; sourceTree = "<group>"; };
 		E555B4B51D83DE0B00380C36 /* MakeFaceUIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeFaceUIConfig.swift; sourceTree = "<group>"; };
+		E555B4BA1D83EF9700380C36 /* MakeFaceLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeFaceLayout.swift; sourceTree = "<group>"; };
 		E5DA3FEC1D768C560071B22E /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E5DA3FF51D76A3500071B22E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		E5DA3FF91D76A6A00071B22E /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				181129DA1C7B3AA400F50FED /* Resource */,
+				E555B4B91D83EF8100380C36 /* Layout */,
 				181129D61C7B385E00F50FED /* Model */,
 				181129D51C7B385B00F50FED /* View */,
 				181129D41C7B385900F50FED /* Controller */,
@@ -187,6 +190,14 @@
 				7A82E2B8B90FE2BCE28C4806 /* Pods-DearFace.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E555B4B91D83EF8100380C36 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				E555B4BA1D83EF9700380C36 /* MakeFaceLayout.swift */,
+			);
+			name = Layout;
 			sourceTree = "<group>";
 		};
 		E5DA3FE31D76882D0071B22E /* AppRoot */ = {
@@ -434,6 +445,7 @@
 			files = (
 				E5E42D441D783577006C5954 /* Observable.swift in Sources */,
 				E5180C951D81BD41009AB393 /* CGSize.swift in Sources */,
+				E555B4BB1D83EF9700380C36 /* MakeFaceLayout.swift in Sources */,
 				E5E42D4B1D78471C006C5954 /* GCD.swift in Sources */,
 				E555B4B61D83DE0B00380C36 /* MakeFaceUIConfig.swift in Sources */,
 				E5E42D401D780CA7006C5954 /* CGFloat.swift in Sources */,

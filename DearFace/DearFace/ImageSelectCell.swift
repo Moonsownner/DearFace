@@ -13,11 +13,9 @@ class ImageSelectCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         layer.cornerRadius = 4
         backgroundColor = UIColor.clearColor()
         clipsToBounds = true
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,6 +33,7 @@ class ImageSelectCell: UICollectionViewCell {
             contentMode: .AspectFill,
             options: options) { (image, data) in
                 let imageV = UIImageView(image: image)
+                imageV.contentMode = .ScaleAspectFill
                 imageV.frame = CGRect(origin: CGPointZero, size: ImageSelectItem.size)
                 self.backgroundView = imageV
         }

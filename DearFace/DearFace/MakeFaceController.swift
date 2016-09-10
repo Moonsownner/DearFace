@@ -14,16 +14,21 @@ class MakeFaceController: UIViewController {
     private let cellId = "cell"
     
     let model: MakeFaceModel
-    var backImg: UIImage?
+    var backImg: UIImage?{
+        didSet{
+            guard let img = backImg else{ return }
+            collectionViewBackView.image = img
+            collectionViewBackView.frame = CGRect(origin: CGPointZero, size: img.size.adjustedBiggerSize(ScreenSize))
+        }
+    }
     
-    lazy var layout: UICollectionViewFlowLayout = {
-        let lo = UICollectionViewFlowLayout()
-        lo.minimumLineSpacing = CGFloat.min
-        lo.minimumInteritemSpacing = CGFloat.min
-        lo.sectionInset = UIEdgeInsetsZero
-        return lo
+    lazy var layout = MakeFaceLayout()
+    
+    lazy var collectionViewBackView: UIImageView = {
+        let imageV = UIImageView(image: self.backImg)
+        imageV.alpha = 0.5
+        return imageV
     }()
-    
     lazy var collectionView: UICollectionView = {
         let collection = UICollectionView(frame: CGRectZero, collectionViewLayout: self.layout)
         collection.registerClass(MakeFaceCell.self, forCellWithReuseIdentifier: self.cellId)
@@ -54,8 +59,14 @@ class MakeFaceController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        collectionView.sendSubviewToBack(collectionViewBackView)
+    }
+    
     func makeUI(){
-        view.backgroundColor = UIColor.whiteColor()
+        
+        collectionView.backgroundColor = UIColor.lightGrayColor()
         
         if let img = backImg{
             makeUI(img)
@@ -73,18 +84,12 @@ class MakeFaceController: UIViewController {
     
     func makeUI(image: UIImage){
         
-        let size = image.size.adjustedSize(ScreenSize)
+        collectionView.addSubview(collectionViewBackView)
+//        let width = (size.width/CGFloat(self.model.rowNum.value))
+//        let height = (size.height/CGFloat(self.model.sectionNum.value))
+//        self.layout.itemSize = CGSize(width: width, height: height)
         
-        let width = (size.width/CGFloat(self.model.rowNum.value))
-        let height = (size.height/CGFloat(self.model.sectionNum.value))
-        self.layout.itemSize = CGSize(width: width, height: height)
-        
-        collectionView.contentSize = size
-        let backView = UIView()
-        let imageView = UIImageView(image: image)
-        imageView.frame = CGRect(origin: CGPointZero, size: size)
-        backView.addSubview(imageView)
-        collectionView.backgroundView = backView
+//        collectionView.contentSize = size
         view.addSubview(collectionView)
         collectionView.snp_makeConstraints { (make) in
             make.top.equalTo(view)
