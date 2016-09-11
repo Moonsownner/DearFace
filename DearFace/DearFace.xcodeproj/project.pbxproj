@@ -18,6 +18,8 @@
 		E555B4B41D82EFEA00380C36 /* PHFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555B4B31D82EFEA00380C36 /* PHFetchResult.swift */; };
 		E555B4B61D83DE0B00380C36 /* MakeFaceUIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555B4B51D83DE0B00380C36 /* MakeFaceUIConfig.swift */; };
 		E555B4BB1D83EF9700380C36 /* MakeFaceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555B4BA1D83EF9700380C36 /* MakeFaceLayout.swift */; };
+		E571B4681D85343400A2AEB1 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571B4671D85343400A2AEB1 /* UIFont.swift */; };
+		E571B46B1D8534D600A2AEB1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571B46A1D8534D600A2AEB1 /* UIColor.swift */; };
 		E5DA3FED1D768C560071B22E /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA3FEC1D768C560071B22E /* Const.swift */; };
 		E5DA3FF61D76A3500071B22E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DA3FF51D76A3500071B22E /* Photos.framework */; };
 		E5DA3FFA1D76A6A00071B22E /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA3FF91D76A6A00071B22E /* ImagePickerController.swift */; };
@@ -47,6 +49,8 @@
 		E555B4B31D82EFEA00380C36 /* PHFetchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHFetchResult.swift; sourceTree = "<group>"; };
 		E555B4B51D83DE0B00380C36 /* MakeFaceUIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeFaceUIConfig.swift; sourceTree = "<group>"; };
 		E555B4BA1D83EF9700380C36 /* MakeFaceLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeFaceLayout.swift; sourceTree = "<group>"; };
+		E571B4671D85343400A2AEB1 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		E571B46A1D8534D600A2AEB1 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E5DA3FEC1D768C560071B22E /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E5DA3FF51D76A3500071B22E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		E5DA3FF91D76A6A00071B22E /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
@@ -256,6 +260,8 @@
 		E5DA3FE91D768BBA0071B22E /* Expand */ = {
 			isa = PBXGroup;
 			children = (
+				E571B4671D85343400A2AEB1 /* UIFont.swift */,
+				E571B46A1D8534D600A2AEB1 /* UIColor.swift */,
 				E5DA3FFE1D76AC490071B22E /* UIImage.swift */,
 				E5E42D3F1D780CA7006C5954 /* CGFloat.swift */,
 				E5180C941D81BD41009AB393 /* CGSize.swift */,
@@ -452,7 +458,9 @@
 				181129BE1C7B365400F50FED /* AppDelegate.swift in Sources */,
 				181129D81C7B38FC00F50FED /* MakeFaceController.swift in Sources */,
 				E5DA3FFA1D76A6A00071B22E /* ImagePickerController.swift in Sources */,
+				E571B46B1D8534D600A2AEB1 /* UIColor.swift in Sources */,
 				E5E42D421D783249006C5954 /* MakeFaceCell.swift in Sources */,
+				E571B4681D85343400A2AEB1 /* UIFont.swift in Sources */,
 				E5E42D481D7845FB006C5954 /* ConfigController.swift in Sources */,
 				E5E42D3E1D780930006C5954 /* MakeFaceModel.swift in Sources */,
 				E555B4B01D82E7FE00380C36 /* ImageSelectCell.swift in Sources */,

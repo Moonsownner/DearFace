@@ -11,11 +11,11 @@ import Photos
 
 class ImagePickerController: UIImagePickerController {
     
+    var imageSelectClosure: (UIImage -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         delegate = self
-        
     }
     
 }
@@ -23,7 +23,8 @@ class ImagePickerController: UIImagePickerController {
 extension ImagePickerController: UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        ConfigVC.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else{ return }
+        imageSelectClosure?(image)
         mainAct {
             self.dismissViewControllerAnimated(true, completion: nil)
         }

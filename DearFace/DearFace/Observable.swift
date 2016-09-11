@@ -11,21 +11,21 @@ import Foundation
 struct Observable<T> {
     
     typealias Observer = T -> Void
-    var observer: Observer?{
+    var observers: [Observer]{
         didSet{
-            observer?(value)
+            observers.forEach{ $0(value) }
         }
     }
     
     var value: T{
         didSet{
-            observer?(value)
+            observers.forEach{ $0(value) }
         }
     }
     
-    init(value: T, observer: Observer? = nil){
+    init(value: T){
         self.value = value
-        self.observer = observer
+        self.observers = []
     }
 
 }
