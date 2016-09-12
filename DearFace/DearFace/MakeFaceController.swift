@@ -9,23 +9,18 @@
 import UIKit
 import Photos
 
+//TODO: 界面消失的时候，去除observer事件
+
 class MakeFaceController: UIViewController {
     
     private let cellId = "cell"
     
     let model: MakeFaceModel
-    var backImg: UIImage?{
-        didSet{
-            guard let img = backImg else{ return }
-            collectionViewBackView.image = img
-            collectionViewBackView.frame = CGRect(origin: CGPointZero, size: img.size.adjustedBiggerSize(ScreenSize))
-        }
-    }
     
     lazy var layout = MakeFaceLayout()
     
     lazy var collectionViewBackView: UIImageView = {
-        let imageV = UIImageView(image: self.backImg)
+        let imageV = UIImageView(image: self.model.image.value)
         imageV.alpha = 0.5
         return imageV
     }()
@@ -39,10 +34,15 @@ class MakeFaceController: UIViewController {
     
     lazy var imageSelectController = ImageSelectController()
     
-    init(model: MakeFaceModel, image: UIImage?){
+    init(model: MakeFaceModel){
         self.model = model
-        self.backImg = image
         super.init(nibName: nil, bundle: nil)
+        self.model.image.observers[ObserverKey.SetBackImage] = { [unowned self] image in
+            guard let img = image else{ return }
+            self.collectionViewBackView.image = img
+            self.collectionViewBackView.frame = CGRect(origin: CGPointZero, size: img.size)
+            self.collectionView.contentSize = img.size
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -68,7 +68,7 @@ class MakeFaceController: UIViewController {
         
         collectionView.backgroundColor = UIColor.lightGrayColor()
         
-        if let img = backImg{
+        if let img = self.model.image.value{
             makeUI(img)
         }
         else{
@@ -85,11 +85,6 @@ class MakeFaceController: UIViewController {
     func makeUI(image: UIImage){
         
         collectionView.addSubview(collectionViewBackView)
-//        let width = (size.width/CGFloat(self.model.rowNum.value))
-//        let height = (size.height/CGFloat(self.model.sectionNum.value))
-//        self.layout.itemSize = CGSize(width: width, height: height)
-        
-//        collectionView.contentSize = size
         view.addSubview(collectionView)
         collectionView.snp_makeConstraints { (make) in
             make.top.equalTo(view)

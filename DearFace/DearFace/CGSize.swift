@@ -26,6 +26,7 @@ extension CGSize{
         }
         return s
     }
+    //TODO: 代码有问题
     ///根据框高比放大得到新size
     func adjustedBiggerSize(size: CGSize) -> CGSize{
         let s: CGSize

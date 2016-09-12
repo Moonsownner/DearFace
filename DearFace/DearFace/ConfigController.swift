@@ -36,6 +36,7 @@ class ConfigController: UIViewController {
         let lbl = UILabel()
         lbl.font = UIFont.hint
         lbl.textColor = UIColor.grayText
+        lbl.text = "行数: \(DefaultConfig.num)"
         return lbl
     }()
     
@@ -51,10 +52,9 @@ class ConfigController: UIViewController {
         let lbl = UILabel()
         lbl.font = UIFont.hint
         lbl.textColor = UIColor.grayText
+        lbl.text = "列数: \(DefaultConfig.num)"
         return lbl
     }()
-    
-    ///
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,23 +132,28 @@ class ConfigController: UIViewController {
     //TODO: 写好observer回调事件
     ///逻辑初始化
     func makeLogic(){
+        model.sectionNum.value = DefaultConfig.num
+        model.rowNum.value = DefaultConfig.num
+        
         let changeImage: UIImage?->Void = { [unowned self] image in
             self.imageViewer.image = image
         }
-        model.image.observers.append(changeImage)
+        model.image.observers[ObserverKey.ChangeConfigImage] = changeImage
     }
     
     ///行数 列数改变
     func sliderChanges(slider: UISlider){
+        let value = round(slider.value*10)
         let forString = (slider.tag == 0) ? "行数" : "列数"
         let lbl = (slider.tag == 0) ? secLabel : rowLabel
-        if slider.value > 0.5{
-            lbl.text = "\(forString): 8"
-            slider.setValue(1, animated: true)
+        let result = Int(value)*4 + DefaultConfig.num
+        lbl.text = "\(forString): \(result)"
+        slider.setValue(value/10, animated: true)
+        if slider.tag == 0{
+            model.sectionNum.value = result
         }
         else{
-            lbl.text = "\(forString): 4"
-            slider.setValue(0, animated: true)
+            model.rowNum.value = result
         }
     }
     
@@ -165,8 +170,7 @@ class ConfigController: UIViewController {
     
     ///进入makeface
     func goNext(){
-//        let vc = MakeFaceController(model: model, image: image)
-//        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(MakeFaceController(model: model), animated: true)
     }
     
     override func prefersStatusBarHidden() -> Bool {

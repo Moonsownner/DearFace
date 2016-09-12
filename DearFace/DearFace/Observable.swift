@@ -10,22 +10,23 @@ import Foundation
 
 struct Observable<T> {
     
+    //MARK: something left to optimize, only the new Observer need to execute
     typealias Observer = T -> Void
-    var observers: [Observer]{
+    var observers: [String: Observer]{
         didSet{
-            observers.forEach{ $0(value) }
+            observers.values.forEach{ $0(value) }
         }
     }
     
     var value: T{
         didSet{
-            observers.forEach{ $0(value) }
+            observers.values.forEach{ $0(value) }
         }
     }
     
     init(value: T){
         self.value = value
-        self.observers = []
+        self.observers = [:]
     }
 
 }

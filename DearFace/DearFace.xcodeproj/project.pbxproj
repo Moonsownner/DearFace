@@ -20,6 +20,8 @@
 		E555B4BB1D83EF9700380C36 /* MakeFaceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555B4BA1D83EF9700380C36 /* MakeFaceLayout.swift */; };
 		E571B4681D85343400A2AEB1 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571B4671D85343400A2AEB1 /* UIFont.swift */; };
 		E571B46B1D8534D600A2AEB1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571B46A1D8534D600A2AEB1 /* UIColor.swift */; };
+		E571B46E1D865DF700A2AEB1 /* ObserverKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571B46D1D865DF700A2AEB1 /* ObserverKey.swift */; };
+		E571B4711D867E0900A2AEB1 /* ConfigUIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571B4701D867E0900A2AEB1 /* ConfigUIConfig.swift */; };
 		E5DA3FED1D768C560071B22E /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA3FEC1D768C560071B22E /* Const.swift */; };
 		E5DA3FF61D76A3500071B22E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DA3FF51D76A3500071B22E /* Photos.framework */; };
 		E5DA3FFA1D76A6A00071B22E /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA3FF91D76A6A00071B22E /* ImagePickerController.swift */; };
@@ -51,6 +53,8 @@
 		E555B4BA1D83EF9700380C36 /* MakeFaceLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeFaceLayout.swift; sourceTree = "<group>"; };
 		E571B4671D85343400A2AEB1 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		E571B46A1D8534D600A2AEB1 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		E571B46D1D865DF700A2AEB1 /* ObserverKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverKey.swift; sourceTree = "<group>"; };
+		E571B4701D867E0900A2AEB1 /* ConfigUIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigUIConfig.swift; sourceTree = "<group>"; };
 		E5DA3FEC1D768C560071B22E /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		E5DA3FF51D76A3500071B22E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		E5DA3FF91D76A6A00071B22E /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
@@ -162,20 +166,12 @@
 		181129D91C7B390000F50FED /* MakeFace */ = {
 			isa = PBXGroup;
 			children = (
-				181129DA1C7B3AA400F50FED /* Resource */,
 				E555B4B91D83EF8100380C36 /* Layout */,
 				181129D61C7B385E00F50FED /* Model */,
 				181129D51C7B385B00F50FED /* View */,
 				181129D41C7B385900F50FED /* Controller */,
 			);
 			name = MakeFace;
-			sourceTree = "<group>";
-		};
-		181129DA1C7B3AA400F50FED /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resource;
 			sourceTree = "<group>";
 		};
 		74DF555D7D200DC3434996E5 /* Frameworks */ = {
@@ -204,12 +200,20 @@
 			name = Layout;
 			sourceTree = "<group>";
 		};
+		E571B46F1D867DD700A2AEB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E571B46D1D865DF700A2AEB1 /* ObserverKey.swift */,
+				E571B4701D867E0900A2AEB1 /* ConfigUIConfig.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		E5DA3FE31D76882D0071B22E /* AppRoot */ = {
 			isa = PBXGroup;
 			children = (
 				E5DA3FE41D76883B0071B22E /* Resource */,
 				181129D31C7B37D800F50FED /* AppDelegate */,
-				E5DA3FE51D7689DD0071B22E /* Root */,
 				E5DA3FE61D7689E60071B22E /* Intro&Launch */,
 			);
 			name = AppRoot;
@@ -224,13 +228,6 @@
 			name = Resource;
 			sourceTree = "<group>";
 		};
-		E5DA3FE51D7689DD0071B22E /* Root */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Root;
-			sourceTree = "<group>";
-		};
 		E5DA3FE61D7689E60071B22E /* Intro&Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,18 +240,9 @@
 			isa = PBXGroup;
 			children = (
 				E5DA3FEB1D768C3D0071B22E /* Common */,
-				E5DA3FE81D768A9B0071B22E /* UIBasic */,
-				E5DA3FEA1D768BC40071B22E /* UIComponet */,
 				E5DA3FE91D768BBA0071B22E /* Expand */,
 			);
 			name = "Public(公共)";
-			sourceTree = "<group>";
-		};
-		E5DA3FE81D768A9B0071B22E /* UIBasic */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = UIBasic;
 			sourceTree = "<group>";
 		};
 		E5DA3FE91D768BBA0071B22E /* Expand */ = {
@@ -268,13 +256,6 @@
 				E555B4B31D82EFEA00380C36 /* PHFetchResult.swift */,
 			);
 			name = Expand;
-			sourceTree = "<group>";
-		};
-		E5DA3FEA1D768BC40071B22E /* UIComponet */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = UIComponet;
 			sourceTree = "<group>";
 		};
 		E5DA3FEB1D768C3D0071B22E /* Common */ = {
@@ -306,7 +287,7 @@
 		E5E42D451D7845E3006C5954 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				E5E42D491D78460D006C5954 /* View */,
+				E571B46F1D867DD700A2AEB1 /* Model */,
 				E5E42D461D7845EE006C5954 /* Controller */,
 			);
 			name = Config;
@@ -318,13 +299,6 @@
 				E5E42D471D7845FB006C5954 /* ConfigController.swift */,
 			);
 			name = Controller;
-			sourceTree = "<group>";
-		};
-		E5E42D491D78460D006C5954 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,6 +427,7 @@
 				E5180C951D81BD41009AB393 /* CGSize.swift in Sources */,
 				E555B4BB1D83EF9700380C36 /* MakeFaceLayout.swift in Sources */,
 				E5E42D4B1D78471C006C5954 /* GCD.swift in Sources */,
+				E571B46E1D865DF700A2AEB1 /* ObserverKey.swift in Sources */,
 				E555B4B61D83DE0B00380C36 /* MakeFaceUIConfig.swift in Sources */,
 				E5E42D401D780CA7006C5954 /* CGFloat.swift in Sources */,
 				181129BE1C7B365400F50FED /* AppDelegate.swift in Sources */,
@@ -469,6 +444,7 @@
 				E5DA3FED1D768C560071B22E /* Const.swift in Sources */,
 				E5DA3FFF1D76AC490071B22E /* UIImage.swift in Sources */,
 				E555B4B41D82EFEA00380C36 /* PHFetchResult.swift in Sources */,
+				E571B4711D867E0900A2AEB1 /* ConfigUIConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
