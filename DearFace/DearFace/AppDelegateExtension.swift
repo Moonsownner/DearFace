@@ -13,6 +13,7 @@ extension AppDelegate{
     
     func initSystem(){
         setTheme()
+        
     }
     
     ///设置界面风格

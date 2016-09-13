@@ -11,7 +11,7 @@ import Foundation
 struct Observable<T> {
     
     //MARK: something left to optimize, only the new Observer need to execute
-    typealias Observer = T -> Void
+    typealias Observer = (T) -> Void
     var observers: [String: Observer]{
         didSet{
             observers.values.forEach{ $0(value) }

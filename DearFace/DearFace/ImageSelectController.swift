@@ -11,7 +11,13 @@ import Photos
 
 class ImageSelectController: UICollectionViewController {
     
-    private let cellId = "cell"
+    fileprivate let cellId = "cell"
+    
+    lazy var longPress: UILongPressGestureRecognizer = {
+        let gesture = UILongPressGestureRecognizer()
+        gesture.addTarget(self, action: Selector(("longPressAction")))
+        return gesture
+    }()
     
     var assets = [PHAsset](){
         didSet{
@@ -24,9 +30,9 @@ class ImageSelectController: UICollectionViewController {
         layout.minimumLineSpacing = ImageSelectItem.padding
         layout.minimumInteritemSpacing = ImageSelectItem.padding
         layout.itemSize = ImageSelectItem.size
-        layout.scrollDirection = .Horizontal
-        layout.headerReferenceSize = CGSizeZero
-        layout.footerReferenceSize = CGSizeZero
+        layout.scrollDirection = .horizontal
+        layout.headerReferenceSize = CGSize.zero
+        layout.footerReferenceSize = CGSize.zero
         layout.sectionInset = UIEdgeInsets(top: ImageSelectItem.padding, left: ImageSelectItem.padding, bottom: ImageSelectItem.padding, right: ImageSelectItem.padding)
         super.init(collectionViewLayout: layout)
     }
@@ -38,41 +44,41 @@ class ImageSelectController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView?.backgroundColor = UIColor.whiteColor()
-        collectionView?.registerClass(ImageSelectCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView?.backgroundColor = UIColor.white
+        collectionView?.register(ImageSelectCell.self, forCellWithReuseIdentifier: cellId)
         
         fetchImage()
     }
     
     func fetchImage(){
-        let albums = PHAssetCollection.fetchAssetCollectionsWithType(.SmartAlbum, subtype: .SmartAlbumUserLibrary, options: nil)
-        guard let album = albums.firstObject as? PHAssetCollection else{ return }
+        let albums = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
+        guard let album = albums.firstObject else{ return }
         
         let options = PHFetchOptions()
-        options.predicate = NSPredicate(format: "mediaType = %@", NSNumber(integer: PHAssetMediaType.Image.rawValue))
+        options.predicate = NSPredicate(format: "mediaType = %@", NSNumber(value: PHAssetMediaType.image.rawValue as Int))
 
-        let result = PHAsset.fetchAssetsInAssetCollection(album, options: options)
-        for asset in result{
-            guard let ass = asset as? PHAsset else{ return }
-            assets.append(ass)
-        }
+        let result = PHAsset.fetchAssets(in: album, options: options)
+//        for asset in result{
+//            guard let ass = asset as? PHAsset else{ return }
+//            assets.append(ass)
+//        }
     }
     
 }
 
 extension ImageSelectController{
     
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return assets.count
     }
     
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath) as! ImageSelectCell
-        cell.setBackImage(assets[indexPath.item])
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ImageSelectCell
+        cell.setBackImage(assets[(indexPath as NSIndexPath).item])
         return cell
     }
     

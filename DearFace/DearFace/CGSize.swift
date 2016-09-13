@@ -16,7 +16,7 @@ extension CGSize{
     }
     
     ///根据宽高比缩放得到新size
-    func adjustedSize(size: CGSize) -> CGSize{
+    func adjustedSize(_ size: CGSize) -> CGSize{
         let s: CGSize
         if ratio > size.ratio{
             s = CGSize(width: size.width, height: size.height/ratio)
@@ -28,7 +28,7 @@ extension CGSize{
     }
     //TODO: 代码有问题
     ///根据框高比放大得到新size
-    func adjustedBiggerSize(size: CGSize) -> CGSize{
+    func adjustedBiggerSize(_ size: CGSize) -> CGSize{
         let s: CGSize
         if ratio > size.ratio{
             s = CGSize(width: size.width*ratio, height: size.height)

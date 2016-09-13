@@ -12,8 +12,8 @@ import Photos
 //TODO: 界面消失的时候，去除observer事件
 
 class MakeFaceController: UIViewController {
-    
-    private let cellId = "cell"
+
+    internal let cellId = "cell"
     
     let model: MakeFaceModel
     
@@ -25,8 +25,8 @@ class MakeFaceController: UIViewController {
         return imageV
     }()
     lazy var collectionView: UICollectionView = {
-        let collection = UICollectionView(frame: CGRectZero, collectionViewLayout: self.layout)
-        collection.registerClass(MakeFaceCell.self, forCellWithReuseIdentifier: self.cellId)
+        let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: self.layout)
+        collection.register(MakeFaceCell.self, forCellWithReuseIdentifier: self.cellId)
         collection.dataSource = self
         collection.delegate = self
         return collection
@@ -40,7 +40,7 @@ class MakeFaceController: UIViewController {
         self.model.image.observers[ObserverKey.SetBackImage] = { [unowned self] image in
             guard let img = image else{ return }
             self.collectionViewBackView.image = img
-            self.collectionViewBackView.frame = CGRect(origin: CGPointZero, size: img.size)
+            self.collectionViewBackView.frame = CGRect(origin: CGPoint.zero, size: img.size)
             self.collectionView.contentSize = img.size
         }
     }
@@ -54,19 +54,19 @@ class MakeFaceController: UIViewController {
         makeUI()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        collectionView.sendSubviewToBack(collectionViewBackView)
+        collectionView.sendSubview(toBack: collectionViewBackView)
     }
     
     func makeUI(){
         
-        collectionView.backgroundColor = UIColor.lightGrayColor()
+        collectionView.backgroundColor = UIColor.lightGray
         
         if let img = self.model.image.value{
             makeUI(img)
@@ -76,13 +76,13 @@ class MakeFaceController: UIViewController {
         }
         
         addChildViewController(imageSelectController)
-        imageSelectController.view.frame = CGRectMake(0, ScreenHeight - ImageSelectItem.rowHeight, ScreenWidth, ImageSelectItem.rowHeight)
+        imageSelectController.view.frame = CGRect(x: 0, y: ScreenHeight - ImageSelectItem.rowHeight, width: ScreenWidth, height: ImageSelectItem.rowHeight)
         view.addSubview(imageSelectController.view)
-        imageSelectController.didMoveToParentViewController(self)
+        imageSelectController.didMove(toParentViewController: self)
         
     }
     
-    func makeUI(image: UIImage){
+    func makeUI(_ image: UIImage){
         
         collectionView.addSubview(collectionViewBackView)
         view.addSubview(collectionView)
@@ -94,7 +94,7 @@ class MakeFaceController: UIViewController {
         }
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden: Bool{
         return true
     }
     
@@ -102,16 +102,16 @@ class MakeFaceController: UIViewController {
 
 extension MakeFaceController: UICollectionViewDataSource{
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return model.sectionNum.value
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model.rowNum.value
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath) as! MakeFaceCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MakeFaceCell
         return cell
     }
     

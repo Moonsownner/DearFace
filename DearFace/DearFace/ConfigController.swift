@@ -17,10 +17,10 @@ class ConfigController: UIViewController {
     ///用于查看选取的图片(照片)
     lazy var imageViewer: UIImageView = {
         let v = UIImageView()
-        v.backgroundColor = UIColor.lightGrayColor()
-        v.contentMode = .ScaleAspectFit
+        v.backgroundColor = UIColor.lightGray
+        v.contentMode = .scaleAspectFit
         v.layer.borderWidth = 8
-        v.layer.borderColor = UIColor.brownColor().CGColor
+        v.layer.borderColor = UIColor.brown.cgColor
         return v
     }()
     
@@ -28,7 +28,7 @@ class ConfigController: UIViewController {
     lazy var secSlider: UISlider = {
         let slider = UISlider()
         slider.tag = 0
-        slider.addTarget(self, action: #selector(ConfigController.sliderChanges(_:)), forControlEvents: .ValueChanged)
+        slider.addTarget(self, action: #selector(ConfigController.sliderChanges(_:)), for: .valueChanged)
         return slider
     }()
     ///行数计数label
@@ -44,7 +44,7 @@ class ConfigController: UIViewController {
     lazy var rowSlider: UISlider = {
         let slider = UISlider()
         slider.tag = 1
-        slider.addTarget(self, action: #selector(ConfigController.sliderChanges(_:)), forControlEvents: .ValueChanged)
+        slider.addTarget(self, action: #selector(ConfigController.sliderChanges(_:)), for: .valueChanged)
         return slider
     }()
     ///行数计数label
@@ -62,13 +62,13 @@ class ConfigController: UIViewController {
         makeLogic()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     func makeUI(){
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.white
         
         view.addSubview(imageViewer)
         imageViewer.snp_makeConstraints { (make) in
@@ -105,9 +105,9 @@ class ConfigController: UIViewController {
         }
         
         let button = UIButton()
-        button.setTitle("图片", forState: .Normal)
-        button.setBackgroundImage(UIImage.fromColor(UIColor.cyanColor()), forState: .Normal)
-        button.addTarget(self, action: #selector(ConfigController.chooseImg), forControlEvents: .TouchUpInside)
+        button.setTitle("图片", for: UIControlState())
+        button.setBackgroundImage(UIImage.fromColor(UIColor.cyan), for: UIControlState())
+        button.addTarget(self, action: #selector(ConfigController.chooseImg), for: .touchUpInside)
         view.addSubview(button)
         button.snp_makeConstraints { (make) in
             make.top.equalTo(rowLabel.snp_bottom).offset(40)
@@ -117,9 +117,9 @@ class ConfigController: UIViewController {
         }
         
         let button2 = UIButton()
-        button2.setTitle("测试", forState: .Normal)
-        button2.setBackgroundImage(UIImage.fromColor(UIColor.brownColor()), forState: .Normal)
-        button2.addTarget(self, action: #selector(ConfigController.goNext), forControlEvents: .TouchUpInside)
+        button2.setTitle("测试", for: UIControlState())
+        button2.setBackgroundImage(UIImage.fromColor(UIColor.brown), for: UIControlState())
+        button2.addTarget(self, action: #selector(ConfigController.goNext), for: .touchUpInside)
         view.addSubview(button2)
         button2.snp_makeConstraints { (make) in
             make.top.equalTo(button.snp_bottom)
@@ -135,14 +135,14 @@ class ConfigController: UIViewController {
         model.sectionNum.value = DefaultConfig.num
         model.rowNum.value = DefaultConfig.num
         
-        let changeImage: UIImage?->Void = { [unowned self] image in
+        let changeImage: (UIImage?)->Void = { [unowned self] image in
             self.imageViewer.image = image
         }
         model.image.observers[ObserverKey.ChangeConfigImage] = changeImage
     }
     
     ///行数 列数改变
-    func sliderChanges(slider: UISlider){
+    func sliderChanges(_ slider: UISlider){
         let value = round(slider.value*10)
         let forString = (slider.tag == 0) ? "行数" : "列数"
         let lbl = (slider.tag == 0) ? secLabel : rowLabel
@@ -164,7 +164,7 @@ class ConfigController: UIViewController {
             self.model.image.value = image
         }
         mainAct {
-            self.presentViewController(picker, animated: true, completion: nil)
+            self.present(picker, animated: true, completion: nil)
         }
     }
     
@@ -173,7 +173,7 @@ class ConfigController: UIViewController {
         navigationController?.pushViewController(MakeFaceController(model: model), animated: true)
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     

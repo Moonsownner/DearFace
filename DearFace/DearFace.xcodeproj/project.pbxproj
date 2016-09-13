@@ -11,8 +11,8 @@
 		181129C51C7B365400F50FED /* App.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181129C41C7B365400F50FED /* App.xcassets */; };
 		181129C81C7B365400F50FED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181129C61C7B365400F50FED /* LaunchScreen.storyboard */; };
 		181129D81C7B38FC00F50FED /* MakeFaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181129D71C7B38FC00F50FED /* MakeFaceController.swift */; };
-		E09D456634D5904FCC75E8D7 /* Pods_DearFace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74DD3A3143145BF26DA726A6 /* Pods_DearFace.framework */; };
 		E5180C951D81BD41009AB393 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5180C941D81BD41009AB393 /* CGSize.swift */; };
+		E526E9E31D87E8910005FB34 /* Pods_DearFace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E526E9E21D87E8910005FB34 /* Pods_DearFace.framework */; };
 		E555B4AE1D82E62800380C36 /* ImageSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555B4AD1D82E62800380C36 /* ImageSelectController.swift */; };
 		E555B4B01D82E7FE00380C36 /* ImageSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555B4AF1D82E7FE00380C36 /* ImageSelectCell.swift */; };
 		E555B4B41D82EFEA00380C36 /* PHFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555B4B31D82EFEA00380C36 /* PHFetchResult.swift */; };
@@ -42,10 +42,10 @@
 		181129C71C7B365400F50FED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		181129C91C7B365400F50FED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		181129D71C7B38FC00F50FED /* MakeFaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeFaceController.swift; sourceTree = "<group>"; };
-		74DD3A3143145BF26DA726A6 /* Pods_DearFace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DearFace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A82E2B8B90FE2BCE28C4806 /* Pods-DearFace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DearFace.release.xcconfig"; path = "Pods/Target Support Files/Pods-DearFace/Pods-DearFace.release.xcconfig"; sourceTree = "<group>"; };
 		8C482BD48F6D349F116D0CC6 /* Pods-DearFace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DearFace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DearFace/Pods-DearFace.debug.xcconfig"; sourceTree = "<group>"; };
 		E5180C941D81BD41009AB393 /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
+		E526E9E21D87E8910005FB34 /* Pods_DearFace.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_DearFace.framework; path = "Pods/../build/Debug-iphoneos/Pods_DearFace.framework"; sourceTree = "<group>"; };
 		E555B4AD1D82E62800380C36 /* ImageSelectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelectController.swift; sourceTree = "<group>"; };
 		E555B4AF1D82E7FE00380C36 /* ImageSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelectCell.swift; sourceTree = "<group>"; };
 		E555B4B31D82EFEA00380C36 /* PHFetchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHFetchResult.swift; sourceTree = "<group>"; };
@@ -73,8 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E526E9E31D87E8910005FB34 /* Pods_DearFace.framework in Frameworks */,
 				E5DA3FF61D76A3500071B22E /* Photos.framework in Frameworks */,
-				E09D456634D5904FCC75E8D7 /* Pods_DearFace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,8 +177,8 @@
 		74DF555D7D200DC3434996E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E526E9E21D87E8910005FB34 /* Pods_DearFace.framework */,
 				E5DA3FF51D76A3500071B22E /* Photos.framework */,
-				74DD3A3143145BF26DA726A6 /* Pods_DearFace.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -331,12 +331,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Joker;
 				TargetAttributes = {
 					181129B91C7B365400F50FED = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = HZ8S3R9QKU;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -475,8 +476,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -498,11 +501,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -519,8 +523,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -536,9 +542,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -547,15 +555,21 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8C482BD48F6D349F116D0CC6 /* Pods-DearFace.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = DearFace/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.jhd.DearFace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -563,15 +577,21 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7A82E2B8B90FE2BCE28C4806 /* Pods-DearFace.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = DearFace/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.jhd.DearFace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

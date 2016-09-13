@@ -6,12 +6,13 @@
 //  Copyright © 2016年 Joker. All rights reserved.
 //
 
+import Foundation
 import Photos
 
-extension PHFetchResult: SequenceType {
-    
-    public func generate() -> NSFastGenerator {
-        return NSFastGenerator(self)
-    }
-    
-}
+//extension PHFetchResult: Sequence {
+//    
+//    public func generate() -> NSFastGenerator {
+//        return NSFastGenerator(self)
+//    }
+//
+//}

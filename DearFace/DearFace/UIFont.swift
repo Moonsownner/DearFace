@@ -15,8 +15,8 @@ extension UIFont{
     }
     
     ///默认字体公共方法
-    class func Normal(size: CGFloat) -> UIFont{
-        return UIFont(size: size) ?? UIFont.systemFontOfSize(size)
+    class func Normal(_ size: CGFloat) -> UIFont{
+        return UIFont(size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
     ///提示标题字体大小

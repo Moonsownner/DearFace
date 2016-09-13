@@ -12,9 +12,9 @@ class MakeFaceCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         
-        layer.borderColor = UIColor.cyanColor().CGColor
+        layer.borderColor = UIColor.cyan.cgColor
         layer.borderWidth = OneWidth
         
     }

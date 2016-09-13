@@ -14,7 +14,7 @@ class ImageSelectCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.cornerRadius = 4
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         clipsToBounds = true
     }
     
@@ -22,19 +22,19 @@ class ImageSelectCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setBackImage(asset: PHAsset){
+    func setBackImage(_ asset: PHAsset){
         let options = PHImageRequestOptions()
-        options.version = .Current
-        options.resizeMode = .Fast
-        options.synchronous = true
-        PHImageManager.defaultManager().requestImageForAsset(
-            asset,
+        options.version = .current
+        options.resizeMode = .fast
+        options.isSynchronous = true
+        PHImageManager.default().requestImage(
+            for: asset,
             targetSize: ImageSelectItem.size,
-            contentMode: .AspectFill,
+            contentMode: .aspectFill,
             options: options) { (image, data) in
                 let imageV = UIImageView(image: image)
-                imageV.contentMode = .ScaleAspectFill
-                imageV.frame = CGRect(origin: CGPointZero, size: ImageSelectItem.size)
+                imageV.contentMode = .scaleAspectFill
+                imageV.frame = CGRect(origin: CGPoint.zero, size: ImageSelectItem.size)
                 self.backgroundView = imageV
         }
         
