@@ -71,7 +71,7 @@ class ConfigController: UIViewController {
         view.backgroundColor = UIColor.white
         
         view.addSubview(imageViewer)
-        imageViewer.snp_makeConstraints { (make) in
+        imageViewer.snp.makeConstraints { (make) in
             make.left.equalTo(view)
             make.top.equalTo(view)
             make.right.equalTo(view)
@@ -79,28 +79,28 @@ class ConfigController: UIViewController {
         }
         
         view.addSubview(secSlider)
-        secSlider.snp_makeConstraints { (make) in
+        secSlider.snp.makeConstraints { (make) in
             make.left.equalTo(view).inset(16)
             make.right.equalTo(view).inset(16)
-            make.top.equalTo(imageViewer.snp_bottom).offset(20)
+            make.top.equalTo(imageViewer.snp.bottom).offset(20)
         }
         view.addSubview(secLabel)
-        secLabel.snp_makeConstraints { (make) in
+        secLabel.snp.makeConstraints { (make) in
             make.right.equalTo(secSlider)
-            make.top.equalTo(secSlider.snp_bottom)
+            make.top.equalTo(secSlider.snp.bottom)
             make.height.equalTo(20)
         }
         
         view.addSubview(rowSlider)
-        rowSlider.snp_makeConstraints { (make) in
+        rowSlider.snp.makeConstraints { (make) in
             make.left.equalTo(secSlider)
             make.right.equalTo(secSlider)
-            make.top.equalTo(secLabel.snp_bottom).offset(10)
+            make.top.equalTo(secLabel.snp.bottom).offset(10)
         }
         view.addSubview(rowLabel)
-        rowLabel.snp_makeConstraints { (make) in
+        rowLabel.snp.makeConstraints { (make) in
             make.right.equalTo(rowSlider)
-            make.top.equalTo(rowSlider.snp_bottom)
+            make.top.equalTo(rowSlider.snp.bottom)
             make.height.equalTo(20)
         }
         
@@ -109,8 +109,8 @@ class ConfigController: UIViewController {
         button.setBackgroundImage(UIImage.fromColor(UIColor.cyan), for: UIControlState())
         button.addTarget(self, action: #selector(ConfigController.chooseImg), for: .touchUpInside)
         view.addSubview(button)
-        button.snp_makeConstraints { (make) in
-            make.top.equalTo(rowLabel.snp_bottom).offset(40)
+        button.snp.makeConstraints { (make) in
+            make.top.equalTo(rowLabel.snp.bottom).offset(40)
             make.centerX.equalTo(view)
             make.height.equalTo(40)
             make.width.equalTo(100)
@@ -121,8 +121,8 @@ class ConfigController: UIViewController {
         button2.setBackgroundImage(UIImage.fromColor(UIColor.brown), for: UIControlState())
         button2.addTarget(self, action: #selector(ConfigController.goNext), for: .touchUpInside)
         view.addSubview(button2)
-        button2.snp_makeConstraints { (make) in
-            make.top.equalTo(button.snp_bottom)
+        button2.snp.makeConstraints { (make) in
+            make.top.equalTo(button.snp.bottom)
             make.centerX.equalTo(button)
             make.width.equalTo(button)
             make.height.equalTo(button)

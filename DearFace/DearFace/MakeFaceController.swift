@@ -86,7 +86,7 @@ class MakeFaceController: UIViewController {
         
         collectionView.addSubview(collectionViewBackView)
         view.addSubview(collectionView)
-        collectionView.snp_makeConstraints { (make) in
+        collectionView.snp.makeConstraints { (make) in
             make.top.equalTo(view)
             make.left.equalTo(view)
             make.right.equalTo(view)

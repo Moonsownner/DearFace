@@ -14,6 +14,8 @@ extension AppDelegate{
     func initSystem(){
         setTheme()
         
+        print(UIScreen.main.bounds)
+        
     }
     
     ///设置界面风格
