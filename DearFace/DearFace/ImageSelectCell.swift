@@ -34,7 +34,6 @@ class ImageSelectCell: UICollectionViewCell {
             options: options) { (image, data) in
                 let imageV = UIImageView(image: image)
                 imageV.contentMode = .scaleAspectFill
-                imageV.frame = CGRect(origin: CGPoint.zero, size: ImageSelectItem.size)
                 self.backgroundView = imageV
         }
         

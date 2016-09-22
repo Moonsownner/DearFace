@@ -44,6 +44,9 @@ class MakeFaceController: UIViewController {
         return btn
     }()
     
+    ///图片数据列表
+    var images = [IndexPath: PHAsset]()
+    
     init(model: MakeFaceModel){
         self.model = model
         super.init(nibName: nil, bundle: nil)
@@ -85,6 +88,7 @@ class MakeFaceController: UIViewController {
             
         }
         
+        imageSelectController.makeFaceDelegate = self
         addChildViewController(imageSelectController)
         imageSelectController.view.frame = CGRect(x: 0, y: ScreenHeight - ImageSelectItem.rowHeight, width: ScreenWidth, height: ImageSelectItem.rowHeight)
         view.addSubview(imageSelectController.view)
@@ -134,6 +138,12 @@ extension MakeFaceController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MakeFaceCell
+        if let asset = images[indexPath]{
+            cell.setBackImage(asset)
+        }
+        else{
+            cell.backgroundView = nil
+        }
         return cell
     }
     

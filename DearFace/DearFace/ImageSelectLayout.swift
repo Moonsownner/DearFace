@@ -17,6 +17,8 @@ class ImageSelectLayout: UICollectionViewLayout {
     var atts = [IndexPath: UICollectionViewLayoutAttributes]()
     var sz = CGSize.zero
     
+    weak var delegate: ImageSelectController?
+    
     init(assets: [PHAsset]) {
         var rs = [CGFloat]()
         for item in assets{
@@ -49,7 +51,7 @@ class ImageSelectLayout: UICollectionViewLayout {
             self.atts[att.indexPath] = att
         }
         
-        sz = CGSize(width: x + ImageSelectItem.padding, height: ImageSelectItem.height + ImageSelectItem.padding*2)
+        sz = CGSize(width: x + ImageSelectItem.padding, height: ImageSelectItem.rowHeight)
     }
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
@@ -62,6 +64,12 @@ class ImageSelectLayout: UICollectionViewLayout {
     
     override var collectionViewContentSize: CGSize{
         return sz
+    }
+    
+    override func invalidationContext(forInteractivelyMovingItems targetIndexPaths: [IndexPath], withTargetPosition targetPosition: CGPoint, previousIndexPaths: [IndexPath], previousPosition: CGPoint) -> UICollectionViewLayoutInvalidationContext {
+        let context = super.invalidationContext(forInteractivelyMovingItems: targetIndexPaths, withTargetPosition: targetPosition, previousIndexPaths: previousIndexPaths, previousPosition: previousPosition)
+        self.delegate?.collectionView(self.collectionView!, moveItemAt: previousIndexPaths[0], to: targetIndexPaths[0])
+        return context
     }
     
 }
