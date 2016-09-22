@@ -13,13 +13,21 @@ extension AppDelegate{
     
     func initSystem(){
         setTheme()
-        
-        print(UIScreen.main.bounds)
-        
+        setConfig()
     }
     
     ///设置界面风格
     func setTheme(){
+        
+    }
+    
+    ///设置系统配置
+    func setConfig(){
+        
+        //1.get all the image data to use
+        GCD.photoQueue.async {
+            Photo.fetchImage()
+        }
         
     }
     

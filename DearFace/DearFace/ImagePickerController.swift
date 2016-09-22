@@ -25,7 +25,7 @@ extension ImagePickerController: UINavigationControllerDelegate, UIImagePickerCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else{ return }
         imageSelectClosure?(image)
-        mainAct {
+        GCD.mainAct {
             self.dismiss(animated: true, completion: nil)
         }
     }

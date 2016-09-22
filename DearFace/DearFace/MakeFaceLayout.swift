@@ -34,7 +34,7 @@ class MakeFaceLayout: UICollectionViewLayout {
                 x = (x + 1)
             }
             x = 0
-            y = (y + 1)
+            y = y + 1
         }
         for att in atts{
             self.atts[att.indexPath] = att

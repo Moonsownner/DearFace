@@ -11,14 +11,14 @@ import UIKit
 extension UIImage{
     
     ///通过颜色生成图片
-    static func fromColor(_ color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
+    static func fromColor(_ color: UIColor, size: CGSize = CGSize(width: 1.0, height: 1.0)) -> UIImage? {
         UIGraphicsBeginImageContext(size)
-        let context = UIGraphicsGetCurrentContext()
-        context?.setFillColor(color.cgColor)
-        context?.fill(CGRect(origin: CGPoint.zero, size: size))
+        guard let context = UIGraphicsGetCurrentContext() else{ return nil }
+        context.setFillColor(color.cgColor)
+        context.fill(CGRect(origin: CGPoint.zero, size: size))
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return image!
+        return image
     }
     
 }

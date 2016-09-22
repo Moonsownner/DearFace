@@ -29,7 +29,7 @@ class ImageSelectCell: UICollectionViewCell {
         options.isSynchronous = true
         PHImageManager.default().requestImage(
             for: asset,
-            targetSize: ImageSelectItem.size,
+            targetSize: bounds.size,
             contentMode: .aspectFill,
             options: options) { (image, data) in
                 let imageV = UIImageView(image: image)

@@ -163,7 +163,7 @@ class ConfigController: UIViewController {
         picker.imageSelectClosure = { [unowned self] image in
             self.model.image.value = image
         }
-        mainAct {
+        GCD.mainAct {
             self.present(picker, animated: true, completion: nil)
         }
     }

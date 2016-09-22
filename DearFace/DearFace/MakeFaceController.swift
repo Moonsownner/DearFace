@@ -34,6 +34,16 @@ class MakeFaceController: UIViewController {
     
     lazy var imageSelectController = ImageSelectController()
     
+    ///临时返回按钮
+    lazy var backButton: UIButton = {
+        let btn = UIButton()
+        btn.setBackgroundImage(UIImage.fromColor(UIColor.red), for: .normal)
+        btn.layer.cornerRadius = 20
+        btn.clipsToBounds = true
+        btn.addTarget(self, action: #selector(MakeFaceController.back), for: .touchUpInside)
+        return btn
+    }()
+    
     init(model: MakeFaceModel){
         self.model = model
         super.init(nibName: nil, bundle: nil)
@@ -80,6 +90,14 @@ class MakeFaceController: UIViewController {
         view.addSubview(imageSelectController.view)
         imageSelectController.didMove(toParentViewController: self)
         
+        view.addSubview(backButton)
+        backButton.snp.makeConstraints { (make) in
+            make.left.equalTo(view.snp.left).inset(10)
+            make.top.equalTo(view.snp.top).inset(10)
+            make.width.equalTo(40)
+            make.height.equalTo(40)
+        }
+        
     }
     
     func makeUI(_ image: UIImage){
@@ -92,6 +110,10 @@ class MakeFaceController: UIViewController {
             make.right.equalTo(view)
             make.bottom.equalTo(view).inset(ImageSelectItem.rowHeight)
         }
+    }
+    
+    func back(){
+        let _ = self.navigationController?.popViewController(animated: true)
     }
     
     override var prefersStatusBarHidden: Bool{

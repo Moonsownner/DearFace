@@ -13,27 +13,24 @@ class ImageSelectController: UICollectionViewController {
     
     fileprivate let cellId = "cell"
     
-    lazy var longPress: UILongPressGestureRecognizer = {
-        let gesture = UILongPressGestureRecognizer()
-        gesture.addTarget(self, action: Selector(("longPressAction")))
-        return gesture
-    }()
-    
-    var assets = [PHAsset](){
-        didSet{
-            self.collectionView?.reloadData()
-        }
-    }
+//    lazy var longPress: UILongPressGestureRecognizer = {
+//        let gesture = UILongPressGestureRecognizer()
+//        gesture.addTarget(self, action: Selector("longPressAction"))
+//        return gesture
+//    }()
     
     init(){
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = ImageSelectItem.padding
-        layout.minimumInteritemSpacing = ImageSelectItem.padding
-        layout.itemSize = ImageSelectItem.size
-        layout.scrollDirection = .horizontal
-        layout.headerReferenceSize = CGSize.zero
-        layout.footerReferenceSize = CGSize.zero
-        layout.sectionInset = UIEdgeInsets(top: ImageSelectItem.padding, left: ImageSelectItem.padding, bottom: ImageSelectItem.padding, right: ImageSelectItem.padding)
+        let layout = ImageSelectLayout(assets: Photo.assets)
+        
+        
+//        let layout = UICollectionViewFlowLayout()
+//        layout.minimumLineSpacing = ImageSelectItem.padding
+//        layout.minimumInteritemSpacing = ImageSelectItem.padding
+//        layout.itemSize = ImageSelectItem.size
+//        layout.scrollDirection = .horizontal
+//        layout.headerReferenceSize = CGSize.zero
+//        layout.footerReferenceSize = CGSize.zero
+//        layout.sectionInset = UIEdgeInsets(top: ImageSelectItem.padding, left: ImageSelectItem.padding, bottom: ImageSelectItem.padding, right: ImageSelectItem.padding)
         super.init(collectionViewLayout: layout)
     }
     
@@ -46,22 +43,6 @@ class ImageSelectController: UICollectionViewController {
         
         collectionView?.backgroundColor = UIColor.white
         collectionView?.register(ImageSelectCell.self, forCellWithReuseIdentifier: cellId)
-        
-        fetchImage()
-    }
-    
-    func fetchImage(){
-        let albums = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
-        guard let album = albums.firstObject else{ return }
-        
-        let options = PHFetchOptions()
-        options.predicate = NSPredicate(format: "mediaType = %@", NSNumber(value: PHAssetMediaType.image.rawValue as Int))
-
-        let result = PHAsset.fetchAssets(in: album, options: options)
-//        for asset in result{
-//            guard let ass = asset as? PHAsset else{ return }
-//            assets.append(ass)
-//        }
     }
     
 }
@@ -73,12 +54,12 @@ extension ImageSelectController{
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return assets.count
+        return Photo.assets.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ImageSelectCell
-        cell.setBackImage(assets[(indexPath as NSIndexPath).item])
+        cell.setBackImage(Photo.assets[indexPath.item])
         return cell
     }
     
