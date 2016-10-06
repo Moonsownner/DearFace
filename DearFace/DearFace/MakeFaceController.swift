@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import SwiftIconFont
 
 //TODO: 界面消失的时候，去除observer事件
 
@@ -40,6 +41,8 @@ class MakeFaceController: UIViewController {
         btn.setBackgroundImage(UIImage.fromColor(UIColor.red), for: .normal)
         btn.layer.cornerRadius = 20
         btn.clipsToBounds = true
+        btn.titleLabel?.font = UIFont.icon(from: .Iconic, ofSize: 28)
+        btn.setTitle(String.fontIconicIcon("cog"), for: .normal)
         btn.addTarget(self, action: #selector(MakeFaceController.back), for: .touchUpInside)
         return btn
     }()

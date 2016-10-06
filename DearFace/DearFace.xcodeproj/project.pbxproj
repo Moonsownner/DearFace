@@ -11,8 +11,8 @@
 		181129C51C7B365400F50FED /* App.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181129C41C7B365400F50FED /* App.xcassets */; };
 		181129C81C7B365400F50FED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181129C61C7B365400F50FED /* LaunchScreen.storyboard */; };
 		181129D81C7B38FC00F50FED /* MakeFaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181129D71C7B38FC00F50FED /* MakeFaceController.swift */; };
+		B3853505BF43A3E56953F402 /* Pods_DearFace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B811255C63805BE52E62EC0 /* Pods_DearFace.framework */; };
 		E5180C951D81BD41009AB393 /* CGSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5180C941D81BD41009AB393 /* CGSize.swift */; };
-		E526E9E31D87E8910005FB34 /* Pods_DearFace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E526E9E21D87E8910005FB34 /* Pods_DearFace.framework */; };
 		E555B4AE1D82E62800380C36 /* ImageSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555B4AD1D82E62800380C36 /* ImageSelectController.swift */; };
 		E555B4B01D82E7FE00380C36 /* ImageSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555B4AF1D82E7FE00380C36 /* ImageSelectCell.swift */; };
 		E555B4B61D83DE0B00380C36 /* MakeFaceUIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E555B4B51D83DE0B00380C36 /* MakeFaceUIConfig.swift */; };
@@ -43,11 +43,10 @@
 		181129C71C7B365400F50FED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		181129C91C7B365400F50FED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		181129D71C7B38FC00F50FED /* MakeFaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeFaceController.swift; sourceTree = "<group>"; };
+		5B811255C63805BE52E62EC0 /* Pods_DearFace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DearFace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A82E2B8B90FE2BCE28C4806 /* Pods-DearFace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DearFace.release.xcconfig"; path = "Pods/Target Support Files/Pods-DearFace/Pods-DearFace.release.xcconfig"; sourceTree = "<group>"; };
 		8C482BD48F6D349F116D0CC6 /* Pods-DearFace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DearFace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DearFace/Pods-DearFace.debug.xcconfig"; sourceTree = "<group>"; };
-		D6CDFAE77F88EE90FE674F6B /* Pods_DearFace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DearFace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5180C941D81BD41009AB393 /* CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSize.swift; sourceTree = "<group>"; };
-		E526E9E21D87E8910005FB34 /* Pods_DearFace.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_DearFace.framework; path = "Pods/../build/Debug-iphoneos/Pods_DearFace.framework"; sourceTree = "<group>"; };
 		E555B4AD1D82E62800380C36 /* ImageSelectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelectController.swift; sourceTree = "<group>"; };
 		E555B4AF1D82E7FE00380C36 /* ImageSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelectCell.swift; sourceTree = "<group>"; };
 		E555B4B51D83DE0B00380C36 /* MakeFaceUIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeFaceUIConfig.swift; sourceTree = "<group>"; };
@@ -76,8 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E526E9E31D87E8910005FB34 /* Pods_DearFace.framework in Frameworks */,
 				E5DA3FF61D76A3500071B22E /* Photos.framework in Frameworks */,
+				B3853505BF43A3E56953F402 /* Pods_DearFace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +106,7 @@
 			children = (
 				E5DA3FE31D76882D0071B22E /* AppRoot */,
 				181129CF1C7B37A100F50FED /* AppMain */,
-				E5DA3FE71D768A8C0071B22E /* Public(公共) */,
+				E5DA3FE71D768A8C0071B22E /* Public */,
 			);
 			path = DearFace;
 			sourceTree = "<group>";
@@ -172,9 +171,8 @@
 		74DF555D7D200DC3434996E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E526E9E21D87E8910005FB34 /* Pods_DearFace.framework */,
 				E5DA3FF51D76A3500071B22E /* Photos.framework */,
-				D6CDFAE77F88EE90FE674F6B /* Pods_DearFace.framework */,
+				5B811255C63805BE52E62EC0 /* Pods_DearFace.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -233,13 +231,13 @@
 			name = "Intro&Launch";
 			sourceTree = "<group>";
 		};
-		E5DA3FE71D768A8C0071B22E /* Public(公共) */ = {
+		E5DA3FE71D768A8C0071B22E /* Public */ = {
 			isa = PBXGroup;
 			children = (
 				E5DA3FEB1D768C3D0071B22E /* Common */,
 				E5DA3FE91D768BBA0071B22E /* Expand */,
 			);
-			name = "Public(公共)";
+			name = Public;
 			sourceTree = "<group>";
 		};
 		E5DA3FE91D768BBA0071B22E /* Expand */ = {

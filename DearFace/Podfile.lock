@@ -1,12 +1,15 @@
 PODS:
-  - SnapKit (3.0.0)
+  - SnapKit (3.0.1)
+  - SwiftIconFont (2.6.0)
 
 DEPENDENCIES:
   - SnapKit (~> 3.0)
+  - SwiftIconFont
 
 SPEC CHECKSUMS:
-  SnapKit: 98af0a4e9369d3c58f758967518081dbdc7eb1d9
+  SnapKit: f818b8326d45b4e1c777d0ab27b5c0a3624bfdeb
+  SwiftIconFont: bbe1f32e1e16bac87dad8566afc80132cb8d072c
 
-PODFILE CHECKSUM: 88861f753565d69ce75702c312cc1c7b625ae381
+PODFILE CHECKSUM: 81de681ed77dd7ccdc98ae9ac99fb1f91004964d
 
 COCOAPODS: 1.0.1
