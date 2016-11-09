@@ -12,20 +12,20 @@ import UIKit
 class MakeFaceModel {
     
     ///图片
-    var image: Observable<UIImage?>
+    var image: Observable<UIImage>
     ///行数
     var sectionNum: Observable<Int>
     ///列数
     var rowNum: Observable<Int>
     
     init(){
-        image = Observable<UIImage?>(value: nil)
+        image = Observable<UIImage>(value: UIImage())
         sectionNum = Observable<Int>(value: 0)
         rowNum = Observable<Int>(value: 0)
     }
     
-    init(image:UIImage?, sectionNum: Int, rowNum: Int){
-        self.image = Observable<UIImage?>(value: image)
+    init(image:UIImage, sectionNum: Int, rowNum: Int){
+        self.image = Observable<UIImage>(value: image)
         self.sectionNum = Observable<Int>(value: sectionNum)
         self.rowNum = Observable<Int>(value: rowNum)
     }

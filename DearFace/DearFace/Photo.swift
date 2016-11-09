@@ -27,5 +27,9 @@ class Photo {
             self.assets.append(result[i])
         }
     }
+	
+	static func saveImage(image: UIImage, completionTarget target: Any? = nil, completionSelector selector: Selector? = nil){
+		UIImageWriteToSavedPhotosAlbum(image, target, selector, nil)
+	}
     
 }

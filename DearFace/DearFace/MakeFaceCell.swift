@@ -34,6 +34,7 @@ class MakeFaceCell: UICollectionViewCell {
             contentMode: .aspectFill,
             options: options) { (image, data) in
                 let imageV = UIImageView(image: image)
+				imageV.clipsToBounds = true
                 imageV.contentMode = .scaleAspectFill
                 self.backgroundView = imageV
         }

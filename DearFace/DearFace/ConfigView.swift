@@ -99,15 +99,14 @@ class ConfigView: UIView {
 			make.left.equalTo(self)
 			make.top.equalTo(self)
 			make.right.equalTo(self)
-			make.height.greaterThanOrEqualTo(160).priority(700)
-			make.height.lessThanOrEqualTo(250).priority(1000)
+			make.height.greaterThanOrEqualTo(200).priority(700)
+			make.height.lessThanOrEqualTo(300).priority(1000)
 		}
 		
 		addSubview(sizeHintView)
 		sizeHintView.snp.makeConstraints { (make) in
 			make.right.equalTo(imageViewer).inset(20)
 			make.top.equalTo(imageViewer).inset(10)
-//			make.bottom.lessThanOrEqualTo(imageViewer)
 		}
 		
 		self.addSubview(secSlider)

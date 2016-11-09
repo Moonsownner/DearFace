@@ -54,10 +54,9 @@ class MakeFaceController: UIViewController {
         self.model = model
         super.init(nibName: nil, bundle: nil)
         self.model.image.observers[ObserverKey.SetBackImage] = { [unowned self] image in
-            guard let img = image else{ return }
-            self.collectionViewBackView.image = img
-            self.collectionViewBackView.frame = CGRect(origin: CGPoint.zero, size: img.size)
-            self.collectionView.contentSize = img.size
+            self.collectionViewBackView.image = image
+            self.collectionViewBackView.frame = CGRect(origin: CGPoint.zero, size: image.size)
+            self.collectionView.contentSize = image.size
         }
     }
     
@@ -83,14 +82,9 @@ class MakeFaceController: UIViewController {
     func makeUI(){
         
         collectionView.backgroundColor = UIColor.lightGray
-        
-        if let img = self.model.image.value{
-            makeUI(img)
-        }
-        else{
-            
-        }
-        
+		
+		makeUI(model.image.value)
+		
         imageSelectController.makeFaceDelegate = self
         addChildViewController(imageSelectController)
         imageSelectController.view.frame = CGRect(x: 0, y: ScreenHeight - ImageSelectItem.rowHeight, width: ScreenWidth, height: ImageSelectItem.rowHeight)
@@ -120,12 +114,17 @@ class MakeFaceController: UIViewController {
     }
     
     func back(){
-        let _ = self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     override var prefersStatusBarHidden: Bool{
         return true
     }
+	
+	func test() {
+		if let image = Util.viewToImage(view: collectionView){
+			Photo.saveImage(image: image)
+	}
     
 }
 
