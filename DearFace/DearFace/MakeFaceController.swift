@@ -38,11 +38,11 @@ class MakeFaceController: UIViewController {
     ///临时返回按钮
     lazy var backButton: UIButton = {
         let btn = UIButton()
-        btn.setBackgroundImage(UIImage.fromColor(UIColor.red), for: .normal)
-        btn.layer.cornerRadius = 20
+        btn.layer.cornerRadius = 25
         btn.clipsToBounds = true
-        btn.titleLabel?.font = UIFont.icon(from: .Iconic, ofSize: 28)
-        btn.setTitle(String.fontIconicIcon("cog"), for: .normal)
+        let image = #imageLiteral(resourceName: "cog").withRenderingMode(.alwaysTemplate)
+        btn.setImage(image, for: .normal)
+        btn.imageView?.tintColor = UIColor.red
         btn.addTarget(self, action: #selector(MakeFaceController.back), for: .touchUpInside)
         return btn
     }()
@@ -101,8 +101,8 @@ class MakeFaceController: UIViewController {
         backButton.snp.makeConstraints { (make) in
             make.left.equalTo(view.snp.left).inset(10)
             make.top.equalTo(view.snp.top).inset(10)
-            make.width.equalTo(40)
-            make.height.equalTo(40)
+            make.width.equalTo(50)
+            make.height.equalTo(50)
         }
         
     }
