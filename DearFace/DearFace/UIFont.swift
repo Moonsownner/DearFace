@@ -15,10 +15,14 @@ extension UIFont{
     }
     
     ///默认字体公共方法
-    class func Normal(_ size: CGFloat) -> UIFont{
+    static func Normal(_ size: CGFloat) -> UIFont{
         return UIFont(size: size) ?? UIFont.systemFont(ofSize: size)
     }
-    
+	
+	static func Bold(_ size: CGFloat) -> UIFont{
+		return UIFont.boldSystemFont(ofSize: size)
+	}
+	
     ///提示标题字体大小
     class var hint: UIFont{
         return UIFont.Normal(12)

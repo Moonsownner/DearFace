@@ -17,10 +17,20 @@ extension UIColor{
 }
 
 extension UIColor{
+	
+	/// 系统色调
+	static var tint: UIColor{
+		return UIColor(227, 95, 80)
+	}
     
     ///默认字体颜色
     class var grayText: UIColor{
         return UIColor(153,153,153)
     }
+	
+	/// a transpant black color
+	class var blackBackCover: UIColor{
+		return UIColor(white: 0, alpha: 0.6)
+	}
     
 }

@@ -42,7 +42,7 @@ class MakeFaceController: UIViewController {
         btn.clipsToBounds = true
         let image = #imageLiteral(resourceName: "cog").withRenderingMode(.alwaysTemplate)
         btn.setImage(image, for: .normal)
-        btn.imageView?.tintColor = UIColor.red
+        btn.imageView?.tintColor = UIColor.tint
         btn.addTarget(self, action: #selector(MakeFaceController.back), for: .touchUpInside)
         return btn
     }()

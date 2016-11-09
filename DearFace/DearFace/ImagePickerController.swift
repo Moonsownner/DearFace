@@ -21,12 +21,12 @@ class ImagePickerController: UIImagePickerController {
 }
 
 extension ImagePickerController: UINavigationControllerDelegate, UIImagePickerControllerDelegate{
-    
+	
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else{ return }
         imageSelectClosure?(image)
         GCD.mainAct {
-            self.dismiss(animated: true, completion: nil)
+            picker.dismiss(animated: true, completion: nil)
         }
     }
     
