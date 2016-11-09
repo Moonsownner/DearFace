@@ -124,6 +124,7 @@ class MakeFaceController: UIViewController {
 	func test() {
 		if let image = Util.viewToImage(view: collectionView){
 			Photo.saveImage(image: image)
+		}
 	}
     
 }
